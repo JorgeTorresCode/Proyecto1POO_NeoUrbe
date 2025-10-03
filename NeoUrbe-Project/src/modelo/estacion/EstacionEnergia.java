@@ -6,10 +6,11 @@ import modelo.robot.RobotAsistente;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class EstacionEnergia {
-    private EstadoEstacion estado;
     private String id;
+    private EstadoEstacion estado;
     private String descripcion;
     private String ubicacion;
     private int capacidadMax;
@@ -93,5 +94,29 @@ public class EstacionEnergia {
     
     private int dispositivosCargando() {
         return dronesCargando.size() + robotsCargando.size();
+    }
+
+    @Override
+    public String toString() {
+        return "EstacionEnergia{" +
+                "id= " + id +
+                "estado= " + estado +
+                "descripcion= " + descripcion +
+                "ubicacion= " + ubicacion +
+                "capacidadMax= " + capacidadMax + ",\n" +
+                "Registros= " + registros + '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        EstacionEnergia that = (EstacionEnergia) o;
+        return Objects.equals(id, that.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

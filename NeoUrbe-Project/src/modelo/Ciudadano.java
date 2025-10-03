@@ -37,9 +37,8 @@ public class Ciudadano {
     public String toString() {
         return "Ciudadano{" +
                 "id=" + id +
-                ", edificioInteligente=" + edificioInteligente +
-                ", robots=" + robots +
-                '}';
+                ", edificioInteligente=" + edificioInteligente + ",\n" +
+                "Robots=" + robots + '}';
     }
 
     @Override

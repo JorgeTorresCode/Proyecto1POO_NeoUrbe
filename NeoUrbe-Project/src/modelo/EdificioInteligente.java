@@ -51,11 +51,11 @@ public class EdificioInteligente {
     public String toString() {
         return "EdificioInteligente{" +
                 "id=" + id +
-                "nombre= " + nombre +
-                "ubicacion= " + ubicacion +
-                "capacidadMax= " + capacidadMax + "\n" +
-                "Ciudadanos= " + ciudadanos + "\n" +
-                "Drones= " + drones + "}";
+                ", nombre= " + nombre +
+                ", ubicacion= " + ubicacion +
+                ", capacidadMax= " + capacidadMax + ",\n" +
+                "Ciudadanos= " + ciudadanos + ",\n" +
+                "Drones= " + drones + '}';
     }
 
     @Override

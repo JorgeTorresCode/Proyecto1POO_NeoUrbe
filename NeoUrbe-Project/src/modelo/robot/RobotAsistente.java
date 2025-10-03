@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Objects;
 
 public class RobotAsistente {
     private String procesador;
@@ -47,5 +48,28 @@ public class RobotAsistente {
     private boolean crearRegistro(LocalDateTime fechaHora, TTarea tarea){
         RegistroTarea registro = new RegistroTarea(fechaHora, tarea);
         return registroTareas.add(registro);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        RobotAsistente that = (RobotAsistente) o;
+        return Objects.equals(procesador, that.procesador);
+    }
+
+    @Override
+    public String toString() {
+        return "RobotAsistente{" +
+                "procesador= " + procesador +
+                ", bateria= " + bateria +
+                ", alerta= " + alerta + ",\n" +
+                "Tareas disponibles= " + tareas + ",\n" +
+                "Registro de tareas realizadas= " + registroTareas + '}';
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(procesador);
     }
 }
