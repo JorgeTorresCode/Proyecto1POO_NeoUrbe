@@ -1,4 +1,10 @@
 package modelo.enumerates;
 
 public enum TTarea {
+    AGENDAR_CITA_MEDICA,
+    ASEAR_DORMITORIO,
+    ELABORAR_LISTA_COMPRAS,
+    REGAR_PLANTAS,
+    PASEAR_CON_CIUDADANO,
+    ASISTIR_REUNION_CON_CIUDADANO;
 }
