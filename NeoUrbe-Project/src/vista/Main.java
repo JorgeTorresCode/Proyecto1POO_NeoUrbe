@@ -206,10 +206,17 @@ public class Main extends JFrame {
             JCheckBox sol3 = new JCheckBox("Llamar al 911");
             JCheckBox sol4 = new JCheckBox("Convocar ambulancias");
 
-            checkPanel.add(sol1);
-            checkPanel.add(sol2);
-            checkPanel.add(sol3);
-            checkPanel.add(sol4);
+            java.util.List<JCheckBox> soluciones = new ArrayList<>();
+            soluciones.add(sol1);
+            soluciones.add(sol2);
+            soluciones.add(sol3);
+            soluciones.add(sol4);
+
+            for (JCheckBox j : soluciones) {
+                checkPanel.add(j);
+            }
+
+            mapaSoluciones.put(btn, soluciones);
 
             btn.addActionListener(e -> {
                 boolean seleccionando = btn.getBackground().equals(Color.RED);

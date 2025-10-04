@@ -16,7 +16,7 @@ public class EdificioInteligente {
     private static ArrayList<Anomalia> anomalias = new ArrayList<>();
     private static int ultimoId = 0;
 
-    EdificioInteligente(String nombre, String ubicacion, int capacidadMax) {
+    public EdificioInteligente(String nombre, String ubicacion, int capacidadMax) {
         this.id = String.format("EI-%03d", ultimoId++);
         this.nombre = nombre;
         this.ubicacion = ubicacion;
@@ -25,13 +25,24 @@ public class EdificioInteligente {
         this.drones = new ArrayList<>();
     }
 
-    boolean agregarCiudadano(Ciudadano unCiudadano) {
+    public boolean agregarCiudadano(Ciudadano unCiudadano) {
         for (Ciudadano c : ciudadanos) {
             if (c.equals(unCiudadano)) {
                 return false;
             }
         }
         return ciudadanos.add(unCiudadano);
+    }
+
+    public boolean removerCiudadano(Ciudadano unCiudadano) {
+        for (int i = 0; i < ciudadanos.size(); i++) {
+            Ciudadano c = ciudadanos.get(i);
+            if (c.equals(unCiudadano)) {
+                ciudadanos.remove(i);
+                return true;
+            }
+        }
+        return false;
     }
 
     public String getId() { return id; }
